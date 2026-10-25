@@ -23,6 +23,8 @@ glam = "0.33.0"
 humantime = "2.3"
 kira = { git = "https://github.com/Roms1383/kira", rev = "10e78eea757d564530c6d04d8d98849650b94862", features = ["serde"] }
 rayon = "1.11"
+# RED4ext SDK 2.5 ABI backport for callbacks, RTTI, and DynArray bindings. Keep
+# original registration behavior so REDscript can supply scripted signatures.
 red4ext-rs = { git = "https://github.com/jac3km4/red4ext-rs", rev = "d419d98d8b81a19a62585d11759fabdeabeb0957" }
 serde = "1.0"
 snafu = "0.9"
@@ -50,3 +52,6 @@ opt-level = 3
 
 [profile.dev.package.symphonia-codec-pcm]
 opt-level = 3
+
+[patch."https://github.com/jac3km4/red4ext-rs"]
+red4ext-rs = { path = "vendor/red4ext-rs" }
